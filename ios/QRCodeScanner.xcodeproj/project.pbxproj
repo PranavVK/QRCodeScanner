@@ -37,6 +37,8 @@
 		2DCD954D1E0B4F2C00145EB5 /* QRCodeScannerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* QRCodeScannerTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
 		81875C3521D76789004F1531 /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81875C3421D76520004F1531 /* libReactNativeNavigation.a */; };
+		81875CEB21D7DCEC004F1531 /* libRNCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81875CEA21D7DCD5004F1531 /* libRNCamera.a */; };
+		81875D2721D7E158004F1531 /* libReactNativePermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81875D2521D7E146004F1531 /* libReactNativePermissions.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
@@ -308,6 +310,20 @@
 			remoteGlobalIDString = D8AFADBD1BEE6F3F00A4592D;
 			remoteInfo = ReactNativeNavigation;
 		};
+		81875CE921D7DCD5004F1531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81875CBF21D7DCD5004F1531 /* RNCamera.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4107012F1ACB723B00C6AA39;
+			remoteInfo = RNCamera;
+		};
+		81875D2421D7E146004F1531 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 81875CFA21D7E146004F1531 /* ReactNativePermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D23B34F1C767B80008B4819;
+			remoteInfo = ReactNativePermissions;
+		};
 		832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */;
@@ -351,6 +367,8 @@
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		81875C0821D764EC004F1531 /* RCCManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCCManager.h; path = "../node_modules/react-native-navigation/ios/RCCManager.h"; sourceTree = "<group>"; };
 		81875C2F21D76520004F1531 /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		81875CBF21D7DCD5004F1531 /* RNCamera.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RNCamera.xcodeproj"; sourceTree = "<group>"; };
+		81875CFA21D7E146004F1531 /* ReactNativePermissions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativePermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/ReactNativePermissions.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -368,6 +386,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81875D2721D7E158004F1531 /* libReactNativePermissions.a in Frameworks */,
+				81875CEB21D7DCEC004F1531 /* libRNCamera.a in Frameworks */,
 				81875C3521D76789004F1531 /* libReactNativeNavigation.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
@@ -562,9 +582,27 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		81875CC021D7DCD5004F1531 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81875CEA21D7DCD5004F1531 /* libRNCamera.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		81875CFB21D7E146004F1531 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81875D2521D7E146004F1531 /* libReactNativePermissions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				81875CFA21D7E146004F1531 /* ReactNativePermissions.xcodeproj */,
+				81875CBF21D7DCD5004F1531 /* RNCamera.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -786,6 +824,14 @@
 				{
 					ProductGroup = 81875C3021D76520004F1531 /* Products */;
 					ProjectRef = 81875C2F21D76520004F1531 /* ReactNativeNavigation.xcodeproj */;
+				},
+				{
+					ProductGroup = 81875CFB21D7E146004F1531 /* Products */;
+					ProjectRef = 81875CFA21D7E146004F1531 /* ReactNativePermissions.xcodeproj */;
+				},
+				{
+					ProductGroup = 81875CC021D7DCD5004F1531 /* Products */;
+					ProjectRef = 81875CBF21D7DCD5004F1531 /* RNCamera.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1049,6 +1095,20 @@
 			fileType = archive.ar;
 			path = libReactNativeNavigation.a;
 			remoteRef = 81875C3321D76520004F1531 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		81875CEA21D7DCD5004F1531 /* libRNCamera.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCamera.a;
+			remoteRef = 81875CE921D7DCD5004F1531 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		81875D2521D7E146004F1531 /* libReactNativePermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativePermissions.a;
+			remoteRef = 81875D2421D7E146004F1531 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		832341B51AAA6A8300B99B32 /* libRCTText.a */ = {

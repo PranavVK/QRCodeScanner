@@ -9,9 +9,13 @@
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.57.8",
+    "react-native-camera": "^1.6.4",
+    "react-native-elevated-view": "0.0.6",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-navigation": "^1.1.493",
-    "react-native-qrcode": "^0.2.6",
+    "react-native-permissions": "^1.1.1",
+    "react-native-qrcode": "0.2.7",
+    "react-native-qrcode-scanner": "1.1.0",
     "react-native-shadow": "^1.2.2",
     "react-native-svg": "^8.0.10"
   },
