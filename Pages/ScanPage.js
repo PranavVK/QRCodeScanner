@@ -30,7 +30,7 @@ class ScanPage extends Component {
 			onRead={this.onSuccess.bind(this)}
 			topContent={
 				<Text>
-					scan the QR code shown by customer
+					scan the QR code
           </Text>
 			}
 			bottomContent={
