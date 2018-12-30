@@ -14,9 +14,7 @@ registerScreens();
 const navigatorStyle = {
 	navBarTranslucent: true,
 	navBarHidden:true,
-	drawUnderStatusBar: true,
-	statusBarColor : 'transparent',
-	statusBarTextColorScheme : 'dark'
+	drawUnderStatusBar: true
 };
 
 Navigation.startSingleScreenApp({
