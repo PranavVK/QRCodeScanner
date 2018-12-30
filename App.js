@@ -86,20 +86,20 @@ class App extends Component {
             <View style={{ width: deviceWidth - 100, height: deviceHeight / 4, marginLeft: 10 }}>
               <TouchableOpacity
                 style={styles.loginButton}
-                pointerEvents= {this.state.userNameValidated === true && this.state.pswdValidated === true ? 'auto': 'none'}
-                underlayColor='#fff' 
+                pointerEvents={this.state.userNameValidated === true && this.state.pswdValidated === true ? 'auto' : 'none'}
+                underlayColor='#fff'
                 onPress={() => {
-                  if (this.state.userNameValidated === true && this.state.pswdValidated === true ){
+                  if (this.state.userNameValidated === true && this.state.pswdValidated === true) {
                     this.props.navigator.push({
-                    screen: 'HomePage',
-                    navigatorStyle: {
-                      navBarBackgroundColor: 'rgba(232,236,244,1)',
-                      navBarNoBorder: true,
-                      navBarButtonColor: "black",
-                      drawUnderStatusBar: true,
-                      navBarHidden: true,
-                    },
-                  });
+                      screen: 'HomePage',
+                      navigatorStyle: {
+                        navBarBackgroundColor: 'rgba(232,236,244,1)',
+                        navBarNoBorder: true,
+                        navBarButtonColor: "black",
+                        drawUnderStatusBar: true,
+                        navBarHidden: true,
+                      },
+                    });
                   }
                   else {
                     alert("Please enter username and password.")

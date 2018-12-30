@@ -48,8 +48,8 @@ class HomePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{ width: deviceWidth, height: 90, backgroundColor: 'rgba(41,56,148,1)'}}>
-          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between' , marginTop: 30}}>
+        <View style={{ width: deviceWidth, height: 90, backgroundColor: 'rgba(41,56,148,1)' }}>
+          <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30 }}>
             <View style={{ flex: 1, paddingLeft: 10 }}>
               <Text style={styles.headerText}>Explore</Text>
             </View>
@@ -84,15 +84,15 @@ class HomePage extends Component {
                         }).then(response => {
                           if (response == 'authorized') {
                             this.props.navigator.push({
-                            screen: 'ScanPage',
-                            navigatorStyle: {
-                            navBarBackgroundColor: 'rgba(232,236,244,1)',
-                            navBarNoBorder: true,
-                            navBarButtonColor: "black",
-                            drawUnderStatusBar: true,
-                            navBarHidden: true
-                          },
-                        });
+                              screen: 'ScanPage',
+                              navigatorStyle: {
+                                navBarBackgroundColor: 'rgba(232,236,244,1)',
+                                navBarNoBorder: true,
+                                navBarButtonColor: "black",
+                                drawUnderStatusBar: true,
+                                navBarHidden: true
+                              },
+                            });
                           }
                           this.setState({ cameraPermission: response })
                         })

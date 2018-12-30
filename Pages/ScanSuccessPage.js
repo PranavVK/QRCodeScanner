@@ -9,9 +9,9 @@ const deviceWidth = Dimensions.get('window').width;
 class ScanSuccessPage extends Component {
 
     constructor(props) {
-		super(props);
-		this.state = {
-        
+        super(props);
+        this.state = {
+
         };
         console.log(this.props.scanDetails)
     }
@@ -36,25 +36,25 @@ class ScanSuccessPage extends Component {
                         </View>
                     </View>
                 </ImageBackground>
-                <View style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: "flex-start", width: deviceWidth, marginTop: 30 ,marginLeft: 25 }}>
-                    <Text style={{ color: 'black', fontSize: 25, fontWeight: '300'}} numberOfLines={1}>{this.props.scanDetails.header}</Text>
+                <View style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: "flex-start", width: deviceWidth, marginTop: 30, marginLeft: 25 }}>
+                    <Text style={{ color: 'black', fontSize: 25, fontWeight: '300' }} numberOfLines={1}>{this.props.scanDetails.header}</Text>
                     <Text style={{ color: 'black', fontSize: 20, fontWeight: '300', marginTop: 20 }} numberOfLines={1}>Speaker: {this.props.scanDetails.speaker}</Text>
-                    <View style={{ flexDirection: 'row', justifyContent: "flex-start", alignItems: "flex-start", marginTop: 30}}>
+                    <View style={{ flexDirection: 'row', justifyContent: "flex-start", alignItems: "flex-start", marginTop: 30 }}>
                         <Image style={{ height: 20, width: 20 }} source={require('../Assets/Icons/clock.png')} />
                         <Text style={{ color: 'black', fontSize: 16, fontWeight: '300', marginLeft: 15 }} numberOfLines={1}>{this.props.scanDetails.time}</Text>
                     </View>
-                    <View style={{ flexDirection: 'row', justifyContent: "flex-start", alignItems: "flex-start", marginTop: 20}}>
+                    <View style={{ flexDirection: 'row', justifyContent: "flex-start", alignItems: "flex-start", marginTop: 20 }}>
                         <Image style={{ height: 20, width: 20 }} source={require('../Assets/Icons/location.png')} />
                         <Text style={{ color: 'black', fontSize: 16, fontWeight: '300', marginLeft: 15 }} numberOfLines={1}>{this.props.scanDetails.venue}</Text>
                     </View>
 
-                    <View style={{ marginTop: 30, alignItems:'center', width: deviceWidth-50}}>
-                    <QRCode
-							value={`${this.state.item}~~${this.state.item}~~${this.state.item}`}
-							size={200}
-							bgColor='black'
-							fgColor='white' 
-                            />
+                    <View style={{ marginTop: 30, alignItems: 'center', width: deviceWidth - 50 }}>
+                        <QRCode
+                            value={`${this.state.item}~~${this.state.item}~~${this.state.item}`}
+                            size={200}
+                            bgColor='black'
+                            fgColor='white'
+                        />
                     </View>
                 </View>
             </View>

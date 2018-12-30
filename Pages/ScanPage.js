@@ -10,16 +10,16 @@ class ScanPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-            scanDetails : {}
+			scanDetails: {}
 		};
 	}
-	
+
 	componentDidMount() {
 		//TODO: Temporary code to mock data, This has to be removed 
-		var details = {header:"13 Years with Wipro",speaker:"Lorem Ipsum", time:"13th November, 3PM-5PM", venue:"Tower s, North Gate"};
+		var details = { header: "13 Years with Wipro", speaker: "Lorem Ipsum", time: "13th November, 3PM-5PM", venue: "Tower s, North Gate" };
 		this.setState({ scanDetails: details });
 		console.log(this.state.scanDetails)
-	  }
+	}
 
 	async onSuccess(e) {
 		try {
@@ -33,13 +33,13 @@ class ScanPage extends Component {
 					scanDetails: this.state.scanDetails
 				},
 				navigatorStyle: {
-				  navBarBackgroundColor: 'rgba(232,236,244,1)',
-				  navBarNoBorder: true,
-				  navBarButtonColor: "black",
-				  drawUnderStatusBar: true,
-				  navBarHidden: true
+					navBarBackgroundColor: 'rgba(232,236,244,1)',
+					navBarNoBorder: true,
+					navBarButtonColor: "black",
+					drawUnderStatusBar: true,
+					navBarHidden: true
 				},
-			  });
+			});
 
 		} catch (err) {
 		}
@@ -48,54 +48,36 @@ class ScanPage extends Component {
 	render() {
 		return (
 			<View>
-				<View style={{ width: deviceWidth, height: 90, backgroundColor: 'rgba(41,56,148,1)'}}>
-					<View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between',marginTop: 30 }}>
+				<View style={{ width: deviceWidth, height: 90, backgroundColor: 'rgba(41,56,148,1)' }}>
+					<View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30 }}>
 						<TouchableOpacity style={{ height: 30, width: 30, marginTop: 15, paddingLeft: 10 }} onPress={() => {
-								this.props.navigator.push({
-				screen: 'ScanSuccessPage',
-				passProps: {
-					scanDetails: this.state.scanDetails
-				},
-				navigatorStyle: {
-				  navBarBackgroundColor: 'rgba(232,236,244,1)',
-				  navBarNoBorder: true,
-				  navBarButtonColor: "black",
-				  drawUnderStatusBar: true,
-				  navBarHidden: true
-				},
-			  });
+							this.props.navigator.pop()
 						}} >
 							<Image style={{ height: 25, width: 25 }} source={require('../Assets/Icons/Back.png')} />
 						</TouchableOpacity>
 						<View style={{ flex: 1, paddingLeft: 40 }}>
 							<Text style={styles.headerText}>Scan</Text>
 						</View>
-					
+
 
 						<View style={{ paddingRight: 0 }}>
-								<TouchableOpacity style={{ height: 30, width: 30, marginTop: 15, marginRight: 0 }}>
-									<Image style={{ height: 25, width: 25 }} source={require('../Assets/Icons/more.png')} />
-								</TouchableOpacity>
+							<TouchableOpacity style={{ height: 30, width: 30, marginTop: 15, marginRight: 0 }}>
+								<Image style={{ height: 25, width: 25 }} source={require('../Assets/Icons/more.png')} />
+							</TouchableOpacity>
 						</View>
 					</View>
 				</View>
 				<QRCodeScanner
 					style={{ backgroundColor: "white", height: deviceHeight, marginTop: 0 }}
 					onRead={this.onSuccess.bind(this)}
-					cameraStyle={{ height: deviceHeight - 90 }}
-					topContent={
-						<Text>
-							scan the QR code
-         		</Text>
-					}
+					cameraStyle={{ height: deviceHeight - 200 }}
 					bottomContent={
 						<TouchableOpacity onPress={() => {
 							this.props.navigator.pop();
-						}} style={{}}>
-							<Text style={{ marginBottom: 50 }}>Cancel</Text>
+						}} style={{ marginBottom: 20, color: 'gray' }}>
+							<Text style={{}}> Cancel</Text>
 						</TouchableOpacity>
-					}
-				/>
+					} />
 			</View>
 		)
 	}
@@ -112,6 +94,13 @@ const styles = StyleSheet.create({
 		fontWeight: '300',
 		color: '#fff',
 		marginTop: 15
+	},
+	captureContainer: {
+		position: 'absolute'
+	},
+	overlayText: {
+		backgroundColor: 'red',
+		color: 'gray'
 	}
 });
 
