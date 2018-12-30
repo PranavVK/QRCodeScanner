@@ -23,14 +23,29 @@ class HomePage extends Component {
 
     var formattedData = [];
     for (i = 1; i <= 5; i++) {
-      formattedData.push({ title: "Ethereum Training", desc: "Learn the components of Ethereum and how to",url: "link" ,category: ["ethereum","Blackchain"] });
+      formattedData.push({ title: "Ethereum Training", desc: "Learn the components of Ethereum and how to setup an Ethereum public network. This course will introduce you to Solidity and hoe to build a basic app and develop smart contacts through extensive hands-on labs. You'll also review web3 and the Truffle framework before linking.",url: "link" ,category: ["ethereum","Blockchain"] });
     }
     
     this.setState({ items: formattedData });
 	}
 
   _renderItem = ({ item, index }) => (
-		<TouchableOpacity onPress={() => { }}>
+		<TouchableOpacity onPress={() => { 
+			this.props.navigator.push({
+							  	screen: 'EventDetailsSelectionPage',
+							  	passProps: {
+								item: item
+							},
+							animated: true,
+							animationType: 'fade',
+							navigatorStyle: {
+								navBarHidden: true,
+								drawUnderStatusBar: true,
+								statusBarColor: 'transparent',
+								statusBarTextColorScheme: 'dark'
+							}
+							});
+		}}>
 			<ElevatedView style={{ width: deviceWidth , marginTop: index === 0 ? 0 : 20, height: 210, backgroundColor: 'gray', marginLeft:0}}>
       <ImageBackground  source={require('../Assets/Icons/backgroundImage.jpeg')} style={{ width: deviceWidth, height: 210, backgroundColor: 'rgba(41,56,148,1)'}} >
       <View style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: "flex-start", width: deviceWidth, marginTop:100}}>
