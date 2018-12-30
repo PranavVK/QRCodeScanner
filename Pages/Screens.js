@@ -3,6 +3,7 @@ import App from '../App';
 import HomePage from './HomePage'
 import ScanPage from './ScanPage'
 import EventDetailsSelectionPage from './EventDetailsSelectionPage'
+import ScanSuccessPage from './ScanSuccessPage';
 
 
 export function registerScreens() {
@@ -10,4 +11,5 @@ export function registerScreens() {
 	Navigation.registerComponent('HomePage', () => HomePage);
 	Navigation.registerComponent('ScanPage', () => ScanPage);
 	Navigation.registerComponent('EventDetailsSelectionPage', () => EventDetailsSelectionPage);
+	Navigation.registerComponent('ScanSuccessPage', () => ScanSuccessPage);
 }
