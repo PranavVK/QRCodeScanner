@@ -50,7 +50,7 @@ class ScanSuccessPage extends Component {
 
                     <View style={{ marginTop: 30, alignItems: 'center', width: deviceWidth - 50 }}>
                         <QRCode
-                            value={`${this.state.item}~~${this.state.item}~~${this.state.item}`}
+                            value={`${this.props.scanDetails.header}~~${this.props.scanDetails.speaker}~~${this.props.scanDetails.time}~~${this.props.scanDetails.venue}`}
                             size={200}
                             bgColor='black'
                             fgColor='white'
