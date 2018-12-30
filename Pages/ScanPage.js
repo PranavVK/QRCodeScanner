@@ -70,7 +70,7 @@ class ScanPage extends Component {
 				<QRCodeScanner
 					style={{ backgroundColor: "white", height: deviceHeight, marginTop: 0 }}
 					onRead={this.onSuccess.bind(this)}
-					cameraStyle={{ height: deviceHeight - 200 }}
+					cameraStyle={{ height: deviceHeight - 90 }}
 					bottomContent={
 						<TouchableOpacity onPress={() => {
 							this.props.navigator.pop();
