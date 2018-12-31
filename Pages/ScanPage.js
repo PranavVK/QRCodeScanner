@@ -54,7 +54,7 @@ class ScanPage extends Component {
 				<View style={{ width: deviceWidth, height: 90, backgroundColor: 'rgba(41,56,148,1)' }}>
 					<View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', marginTop: 30 }}>
 						<TouchableOpacity style={{ height: 30, width: 30, marginTop: 15, paddingLeft: 10 }} onPress={() => {
-							this.props.navigator.pop()
+						this.props.navigator.pop();
 						}} >
 							<Image style={{ height: 25, width: 25 }} source={require('../Assets/Icons/Back.png')} />
 						</TouchableOpacity>
@@ -97,7 +97,9 @@ const styles = StyleSheet.create({
 	},
 	headerText: {
 		fontSize: 25,
-		fontWeight: '300',
+		fontFamily: 'OpenSans',
+		fontStyle: 'normal',
+		fontWeight: '500',
 		color: '#fff',
 		marginTop: 15
 	},

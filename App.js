@@ -70,17 +70,17 @@ class App extends Component {
             </View>
 
             <View style={{ width: deviceWidth - 100, height: deviceHeight / 4, marginLeft: 10 }}>
-              <Text style={{ marginTop: 10, color: 'gray' }}>Username</Text>
+              <Text style={{ fontFamily: 'OpenSans', fontWeight: '500', marginTop: 10, color: 'gray' }}>Username</Text>
               <TextInput style={this.state.userNameValidated === true ? styles.textFieldValidated : styles.textFieldNotValidated}
                 onChangeText={(text) => this.validateUsername(text)}
               />
-              <Text style={{ marginTop: 20, color: 'gray' }}>Password</Text>
+              <Text style={{ fontFamily: 'OpenSans', fontWeight: '500', marginTop: 20, color: 'gray' }}>Password</Text>
               <TextInput style={this.state.pswdValidated === true ? styles.textFieldValidated : styles.textFieldNotValidated}
                 secureTextEntry={true}
                 onChangeText={(text) => this.validatePswd(text)}
               />
               <TouchableOpacity style={{ height: 30, width: 110, marginRight: 1, marginTop: 5, alignSelf: 'flex-end' }}>
-                <Text style={{ textAlign: 'right', color: 'gray' }}>Forgot password</Text>
+                <Text style={{ fontFamily: 'OpenSans', textAlign: 'right', color: 'gray' }}>Forgot password</Text>
               </TouchableOpacity>
             </View>
 
@@ -103,7 +103,7 @@ class App extends Component {
                     });
                   }
                   else {
-                    alert("Please enter username and password.")
+                    alert("Please enter a valid username and password.")
                   }
                 }}>
                 <Text style={styles.loginText}>LOGIN</Text>
@@ -140,20 +140,28 @@ const styles = StyleSheet.create({
     }
   },
   headerText: {
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
     fontSize: 25,
-    fontWeight: '300'
+    fontWeight: '700'
   },
   textFieldValidated: {
     borderBottomColor: 'green',
     borderBottomWidth: 1,
     height: 35,
-    textAlign: 'left'
+    textAlign: 'left',
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontWeight: '700'
   },
   textFieldNotValidated: {
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
     height: 35,
-    textAlign: 'left'
+    textAlign: 'left',
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontWeight: '700'
   },
   loginButton: {
     height: 40,
@@ -163,7 +171,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     shadowColor: "gray",
     shadowOpacity: 0.3,
-    shadowRadius: 10,
+    shadowRadius: 5,
     shadowOffset: {
       height: 1,
       width: 1
@@ -174,19 +182,27 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 1,
     borderColor: '#fff',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop:5
   },
   loginText: {
     color: '#fff',
     textAlign: 'center',
     paddingLeft: 10,
-    paddingRight: 10
+    fontSize: 15,
+    paddingRight: 10,
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontWeight: '700'
   },
   signupText: {
     color: 'gray',
     textAlign: 'center',
     paddingLeft: 10,
-    paddingRight: 10
+    paddingRight: 10,
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontWeight: '400'
   }
 
 });

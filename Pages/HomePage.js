@@ -21,7 +21,7 @@ class HomePage extends Component {
 
     var formattedData = [];
     for (i = 1; i <= 5; i++) {
-      formattedData.push({ title: "Ethereum Training", desc: "Learn the components of Ethereum and how to setup an Ethereum public network. This course will introduce you to Solidity and hoe to build a basic app and develop smart contacts through extensive hands-on labs. You'll also review web3 and the Truffle framework before linking.",url: "link" ,category: ["ethereum","Blockchain"] });
+      formattedData.push({ title: "Ethereum Training", desc: "Learn the components of Ethereum and how to setup an Ethereum public network. This course will introduce you to Solidity and hoe to build a basic app and develop smart contacts through extensive hands-on labs. You'll also review web3 and the Truffle framework before linking.",url: "link" ,category: ["Ethereum","Blockchain"] });
     }
 
     this.setState({ items: formattedData });
@@ -47,8 +47,8 @@ class HomePage extends Component {
 			<ElevatedView style={{ width: deviceWidth , marginTop: index === 0 ? 0 : 20, height: 210, backgroundColor: 'gray', marginLeft:0}}>
       <ImageBackground  source={require('../Assets/Icons/backgroundImage.jpeg')} style={{ width: deviceWidth, height: 210, backgroundColor: 'rgba(41,56,148,1)'}} >
       <View style={{ flexDirection: 'column', justifyContent: "flex-start", alignItems: "flex-start", width: deviceWidth, marginTop:100}}>
-						<Text style={{ color:'rgba(255,255,255,1)', fontSize: 20, fontWeight: '300', marginLeft: 15 }} numberOfLines={1}>{item.title}</Text>
-						<Text style={{ color:'rgba(255,255,255,.5)', fontSize: 16, fontWeight: '300', marginLeft: 15, marginTop: 4 }} numberOfLines={1}>{item.desc}</Text>
+						<Text style={{ color:'rgba(255,255,255,1)', fontFamily: 'OpenSans', fontWeight: '600',fontSize: 20, marginLeft: 15 }} numberOfLines={1}>{item.title}</Text>
+						<Text style={{ color:'rgba(255,255,255,.5)', fontFamily: 'OpenSans', fontWeight: '500',fontSize: 16, marginLeft: 15, marginTop: 4 }} numberOfLines={1}>{item.desc}</Text>
             <View style={{ flexDirection: 'row', justifyContent: "flex-start", alignItems: "flex-start", width: deviceWidth}}>
               {item.category.map(item =>  <CategoryButton title={item}/>)}
             </View>
@@ -153,8 +153,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F5FCFF',
   },
   headerText: {
+    fontFamily: 'OpenSans',
+    fontStyle: 'normal',
+    fontWeight: '500',
     fontSize: 25,
-    fontWeight: '300',
     color: '#fff',
     marginTop: 15
   }
