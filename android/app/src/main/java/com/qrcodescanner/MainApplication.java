@@ -28,9 +28,9 @@ import java.util.List;
 //     protected List<ReactPackage> getPackages() {
 //       return Arrays.<ReactPackage>asList(
 //           new MainReactPackage(),
-            new SvgPackage(),
-            new LinearGradientPackage(),
-            new RNCameraPackage(),
+ //           new SvgPackage(),
+ //           new LinearGradientPackage(),
+ //           new RNCameraPackage(),
 //           new RNCameraPackage()
 //       );
 //     }
@@ -62,6 +62,8 @@ public class MainApplication extends NavigationApplication {
 
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
+        new SvgPackage(),
+        new LinearGradientPackage(),
         new MainReactPackage(),
         new RNCameraPackage()
       );

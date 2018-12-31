@@ -30,21 +30,29 @@ class ScanPage extends Component {
 			// qrData = qrData.split("~~");
 			console.log(qrData)
 
-			this.props.navigator.push({
-				screen: 'ScanSuccessPage',
-				passProps: {
-					scanDetails: this.state.scanDetails
-				},
-				navigatorStyle: {
-					navBarBackgroundColor: 'rgba(232,236,244,1)',
-					navBarNoBorder: true,
-					navBarButtonColor: "black",
-					drawUnderStatusBar: true,
-					navBarHidden: true
-				},
-			});
+			var validQR = true
+
+			if (validQR === true) {
+				this.props.navigator.push({
+					screen: 'ScanSuccessPage',
+					passProps: {
+						scanDetails: this.state.scanDetails
+					},
+					navigatorStyle: {
+						navBarBackgroundColor: 'rgba(232,236,244,1)',
+						navBarNoBorder: true,
+						navBarButtonColor: "black",
+						drawUnderStatusBar: true,
+						navBarHidden: true
+					},
+				});
+			}
+			else {
+				this.setState({ invalidQR: true });
+			}
 
 		} catch (err) {
+			this.setState({ invalidQR: true });
 		}
 	}
 
