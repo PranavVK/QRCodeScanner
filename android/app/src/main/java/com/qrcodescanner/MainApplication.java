@@ -7,39 +7,67 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
+import org.reactnative.camera.RNCameraPackage;
+import com.reactnativenavigation.NavigationApplication;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class MainApplication extends Application implements ReactApplication {
+// public class MainApplication extends Application implements ReactApplication {
 
-  private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
-    @Override
-    public boolean getUseDeveloperSupport() {
+//   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
+//     @Override
+//     public boolean getUseDeveloperSupport() {
+//       return BuildConfig.DEBUG;
+//     }
+
+//     @Override
+//     protected List<ReactPackage> getPackages() {
+//       return Arrays.<ReactPackage>asList(
+//           new MainReactPackage(),
+//           new RNCameraPackage()
+//       );
+//     }
+
+//     @Override
+//     protected String getJSMainModuleName() {
+//       return "index";
+//     }
+//   };
+
+//   @Override
+//   public ReactNativeHost getReactNativeHost() {
+//     return mReactNativeHost;
+//   }
+
+//   @Override
+//   public void onCreate() {
+//     super.onCreate();
+//     SoLoader.init(this, /* native exopackage */ false);
+//   }
+
+// }
+
+public class MainApplication extends NavigationApplication {
+    
+    public boolean isDebug() {
       return BuildConfig.DEBUG;
     }
 
-    @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+        new MainReactPackage(),
+        new RNCameraPackage()
       );
     }
-
+    
     @Override
-    protected String getJSMainModuleName() {
+    public String getJSMainModuleName() {
       return "index";
     }
-  };
 
-  @Override
-  public ReactNativeHost getReactNativeHost() {
-    return mReactNativeHost;
-  }
+	public List<ReactPackage> createAdditionalReactPackages() {
+		return getPackages();
+	}
 
-  @Override
-  public void onCreate() {
-    super.onCreate();
-    SoLoader.init(this, /* native exopackage */ false);
-  }
 }

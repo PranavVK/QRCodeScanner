@@ -62,7 +62,8 @@ class App extends Component {
       <View style={styles.container}>
         <StatusBar barStyle="light-content" />
         <ImageBackground style={{ width: deviceWidth, height: deviceHeight / 4, backgroundColor: 'rgba(41,56,148,1)' }} >
-          <View style={styles.loginView}>
+        </ImageBackground>
+        <View style={styles.loginView}>
 
             <View style={{ height: deviceHeight / 7, justifyContent: "center", alignItems: "center" }} >
               <Text style={styles.headerText}> MyEvents</Text>
@@ -114,7 +115,6 @@ class App extends Component {
               </TouchableOpacity>
             </View>
           </View>
-        </ImageBackground>
       </View>
     );
   }
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     width: deviceWidth - 80,
     height: deviceHeight - 250,
     backgroundColor: 'rgba(255,255,255,1)',
-    marginTop: 125,
+    marginTop: -40,
     marginLeft: 40,
     shadowColor: "#000000",
     shadowOpacity: 0.3,

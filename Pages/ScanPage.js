@@ -10,7 +10,8 @@ class ScanPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			scanDetails: {}
+			scanDetails: {},
+			invalidQR: false
 		};
 	}
 
@@ -20,6 +21,8 @@ class ScanPage extends Component {
 		this.setState({ scanDetails: details });
 		console.log(this.state.scanDetails)
 	}
+
+	
 
 	async onSuccess(e) {
 		try {
@@ -67,17 +70,20 @@ class ScanPage extends Component {
 						</View>
 					</View>
 				</View>
+				<View style={{flex: 1, flexDirection: "column", alignItems: "center"}}>
+				<View>
 				<QRCodeScanner
-					style={{ backgroundColor: "white", height: deviceHeight, marginTop: 0 }}
+					style={{ backgroundColor: "white", marginTop: 0 }}
 					onRead={this.onSuccess.bind(this)}
-					cameraStyle={{ height: deviceHeight - 90 }}
-					bottomContent={
-						<TouchableOpacity onPress={() => {
-							this.props.navigator.pop();
-						}} style={{ marginBottom: 20, color: 'gray' }}>
-							<Text style={{}}> Cancel</Text>
-						</TouchableOpacity>
-					} />
+					cameraStyle={{height: deviceHeight-90}}
+					/>
+				</View>
+				{this.state.invalidQR && <View style={{marginTop: deviceHeight-300, backgroundColor: 'rgba(0,0,0,0.7)', width: 200, height: 120}}>
+					<Text style={{color: 'rgba(255,0,0,1)', fontSize: 16, fontWeight: '500', marginTop: 20, paddingLeft: 4}}>Scan Failure:</Text>
+					<Text style={{color: 'rgba(255,0,0,1)', fontSize: 16, marginTop: 15, marginBottom: 20, paddingLeft: 4}}>No matching event found for selected QR</Text>
+				</View>}
+				</View>
+				
 			</View>
 		)
 	}

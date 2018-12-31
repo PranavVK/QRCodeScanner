@@ -57,7 +57,7 @@ class EventDetailsSelectionPage extends Component {
 										animationType: 'fade',
 									})
 								}} style={{height: 30, width: 30, paddingLeft: 10}}>
-                <Image style={{height: 25, width:25}} source={require('../Assets/Icons/more.png')}/>
+                <Image style={{height: 25, width:25}} source={require('../Assets/Icons/Back.png')}/>
               </TouchableOpacity>
             <TouchableOpacity onPress={() => { }} style={{ height: 42, width: 42}}>
             <Image style={{height: 25, width:25}} source={require('../Assets/Icons/more.png')}/>
